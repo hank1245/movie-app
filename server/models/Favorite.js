@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const moment = require("moment");
 const { Schema } = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const favoriteSchema = mongoose.Schema({
    userFrom:{
        type:Schema.Types.ObjectId,
        ref:'User'
@@ -16,12 +15,12 @@ const userSchema = mongoose.Schema({
    moviePost:{
        type:String
    },
-   movieRunTime:{
+   movieRuntime:{
        type:String
    }
 },{timeStamps: true})
 
 
-const User = mongoose.model('User', userSchema);
+const Favorite = mongoose.model('Favorite', favoriteSchema);
 
-module.exports = { User }
+module.exports = { Favorite }
